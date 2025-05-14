@@ -1,4 +1,4 @@
-# WaterWatchX 
+# WaterWatchX
 
 A Flask-based web application for detecting and reporting water issues (leakage, scarcity, etc.) using image uploads and location data. Features SMS notifications, MongoDB storage, and officer assignment.
 
@@ -11,46 +11,82 @@ A Flask-based web application for detecting and reporting water issues (leakage,
 - Officer assignment for issue resolution
 
 ## Tech Stack
-- Backend: Flask, Python
-- Database: MongoDB
-- SMS: Twilio API
-- ML: CNN model for water issue detection (`water_cnn_model.h5`)
-- Frontend: (Optional) React app in `healthcare-ai/` for visualization
+- **Backend**: Flask, Python
+- **Database**: MongoDB
+- **SMS**: Twilio API
+- **Machine Learning**: CNN model for water issue detection (`water_cnn_model.h5`)
 
 ## Project Structure
-- `flask_backend/`: Flask backend for WaterWatchX
-  - `app.py`: Main Flask application
-  - `requirements.txt`: Python dependencies
-  - `uploads/`: Directory for user-uploaded images (ignored in production)
-  - `resolved_images/`: Directory for resolved issue images (ignored in production)
-  - `water_cnn_model.h5`: Pre-trained CNN model for water issue detection
-- `healthcare-ai/`: React frontend (optional, may be removed if unrelated)
+- `app.py`: Main Flask application
+- `requirements.txt`: Python dependencies
+- `water_cnn_model.h5`: Pre-trained CNN model for water issue detection
+- `water_quality_model.pkl`: Model for water quality prediction
+- `test_model.py`: Script for testing the ML model
+- `train_model.py`: Script for training the ML model
+- `.gitignore`: Files and directories to ignore (e.g., `.env`, `uploads/`, `resolved_images/`)
+
+**Note**: Image upload directories (`uploads/`, `resolved_images/`) are ignored in production and not included in the repositorY
+
+## Prerequisites
+Before setting up the project, ensure you have the following installed:
+- Python 3.8 or higher
+- MongoDB (local or cloud instance like MongoDB Atlas)
+- A Twilio account for SMS notifications
+- (Optional) A GROQ API key if using GROQ for additional features
+- An SMTP server for email notifications (e.g., Gmail SMTP)
 
 ## Setup
-1. Clone the repo:
+Follow these steps to set up and run the WaterWatchX application:
+
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/HemanthGK2004/WaterWatchX.git
    cd WaterWatchX
-   ```bash
-2. Set up a virtual environment (optional but recommended):
+
+2. **Set Up a Virtual Environment (optional but recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate (on Linux/Mac) or venv\Scripts\activate
+
+3. **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+
+4. **Set up MongoDB:
+ - Install MongoDB locally or use a cloud instance like MongoDB Atlas
+ - Create a new database and collection for WaterWatchX data
+ - Update the `app.py` file with your MongoDB connection details
+ - Ensure MongoDB is running before proceeding
+ - Note the MongoDB URI for later use
+
+5. **Configure Environment Variables : Create a .env file in the root directory**
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```bash
-3. Install MongoDB and Twilio API keys (see `app.py` for setup instructions)
-4.create .env file with :
-```bash
-GROQ_API_KEY=
-TWILIO_SID=
-TWILIO_AUTH_TOKEN=
-TWILIO_PHONE=
-SECRET_KEY=
-SMTP_HOST=
-SMTP_PORT=
-SMTP_EMAIL=
-SMTP_PASSWORD=
-5. Run the Flask app:
+# .env
+MONGODB_URI=mongodb://localhost:27017/waterwatchx  # Replace with your MongoDB URI
+GROQ_API_KEY=your_groq_api_key                     # Optional, if using GROQ
+TWILIO_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+TWILIO_PHONE=your_twilio_phone_number
+SECRET_KEY=your_flask_secret_key                   # A random string for Flask session security
+SMTP_HOST=smtp.gmail.com                           # Example: Gmail SMTP host
+SMTP_PORT=587                                      # Example: Gmail SMTP port
+SMTP_EMAIL=your_email@gmail.com                    # Your SMTP email
+SMTP_PASSWORD=your_smtp_password                   # Your SMTP password or app-specific password
+
+6. **Run the Application**:
 ```bash
 python app.py
+
+**Machine Learning Models**
+- water_cnn_model.h5: Pre-trained CNN model for detecting water issues in images.
+- water_quality_model.pkl: Model for predicting water quality.
+Testing the Model: Use test_model.py to test the pre-trained model on new data.
+- Training a New Model: Use train_model.py to train a new model if you have your own dataset.
+
+**Usage**
+- Report a Water Issue: Upload an image and provide location data via the web interface.
+- Issue Categorization: The app categorizes issues as leakage, scarcity, or others. Pollution reports are marked invalid and require user verification.
+- Notifications: Receive SMS updates via Twilio for issue status.
+- Officer Assignment: Issues are assigned to officers for resolution
+
 
