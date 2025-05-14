@@ -53,14 +53,19 @@ Follow these steps to set up and run the WaterWatchX application:
    ```bash
    git clone https://github.com/HemanthGK2004/WaterWatchX.git
    cd WaterWatchX
-2.Set Up a Virtual Environment (optional but recommended):
-```bash
+2. **Set Up a Virtual Environment (optional but recommended)**:
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Linux/Mac
-   venv\Scripts\activate     # On Windows
-
-3.**Install Dependencies:**:
-```bash
-   pip install -r requirements.txt
+   venv\Scripts\activate
+3. **Install Dependencies:**
+   ```bash
+      pip install -r requirements.txt
+4. **Set up MongoDB:**
+- Install MongoDB locally or use a cloud instance like MongoDB Atlas.
+- Create a new database and collection for WaterWatchX data.
+- Update the app.py file with your MongoDB connection details.
+- Ensure MongoDB is running before proceeding.
+- Note the MongoDB URI for later use.
 
 
