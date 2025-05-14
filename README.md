@@ -59,3 +59,8 @@ Follow these steps to set up and run the WaterWatchX application:
    source venv/bin/activate  # On Linux/Mac
    venv\Scripts\activate     # On Windows
 
+3.**Install Dependencies:**:
+```bash
+   pip install -r requirements.txt
+
+
