@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+
+# Sensitive data
+config.py
+secrets/
+*.key
+*.pem
+
+# MongoDB local data
+*.bson
+*.gz
+
+# Misc
+.DS_Store
+*.log
