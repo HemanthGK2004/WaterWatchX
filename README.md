@@ -96,8 +96,8 @@ Helps in determining if water is safe for use or requires attention.
 
 **Usage**
    Reporting a Water Issue**
-      - Users can upload an image and provide location data via the web interface.
-      - The system categorizes the issue as leakage, scarcity, or others.
+      1. Users can upload an image and provide location data via the web interface.
+      2. The system categorizes the issue as leakage, scarcity, or others.
    **Issue Verification**
       - Pollution reports are marked invalid and require manual user verification.
    **Notifications**
