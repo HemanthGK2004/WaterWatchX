@@ -94,15 +94,15 @@ Capable of categorizing issues such as leakage, scarcity, or others.
 A model for predicting water quality based on input data.
 Helps in determining if water is safe for use or requires attention.
 
-**Usage**
-Reporting a Water Issue
+## Usage
+**Reporting a Water Issue**
 1. Users can upload an image and provide location data via the web interface.
 2. The system categorizes the issue as leakage, scarcity, or others.
-   **Issue Verification**
-      - Pollution reports are marked invalid and require manual user verification.
-   **Notifications**
-      - Receive SMS updates via Twilio for issue status changes or resolutions.
-   **Officer Assignment**
-      - Issues are automatically assigned to officers for resolution based on categorization and priority.
+**Issue Verification**
+1. Pollution reports are marked invalid and require manual user verification.
+**Notifications**
+1.Receive SMS updates via Twilio for issue status changes or resolutions.
+**Officer Assignment**
+1. Issues are automatically assigned to officers for resolution based on categorization and priority.
 
 
