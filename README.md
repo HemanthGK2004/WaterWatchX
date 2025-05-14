@@ -31,3 +31,26 @@ A Flask-based web application for detecting and reporting water issues (leakage,
    ```bash
    git clone https://github.com/HemanthGK2004/WaterWatchX.git
    cd WaterWatchX
+   ```bash
+2. Set up a virtual environment (optional but recommended):
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```bash
+3. Install MongoDB and Twilio API keys (see `app.py` for setup instructions)
+4.create .env file with :
+```bash
+GROQ_API_KEY=
+TWILIO_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_PHONE=
+SECRET_KEY=
+SMTP_HOST=
+SMTP_PORT=
+SMTP_EMAIL=
+SMTP_PASSWORD=
+5. Run the Flask app:
+```bash
+python app.py
+
