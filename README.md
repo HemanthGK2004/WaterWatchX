@@ -95,9 +95,9 @@ A model for predicting water quality based on input data.
 Helps in determining if water is safe for use or requires attention.
 
 **Usage**
-   Reporting a Water Issue**
-      1. Users can upload an image and provide location data via the web interface.
-      2. The system categorizes the issue as leakage, scarcity, or others.
+Reporting a Water Issue
+1. Users can upload an image and provide location data via the web interface.
+2. The system categorizes the issue as leakage, scarcity, or others.
    **Issue Verification**
       - Pollution reports are marked invalid and require manual user verification.
    **Notifications**
