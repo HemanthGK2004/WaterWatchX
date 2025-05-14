@@ -68,4 +68,41 @@ Follow these steps to set up and run the WaterWatchX application:
 - Ensure MongoDB is running before proceeding.
 - Note the MongoDB URI for later use.
 
+5. **Configure Environment Variables**
+   - Create a .env file in the root directory:
+     ```bash
+        # .env
+      MONGODB_URI=mongodb://localhost:27017/waterwatchx  # Replace with your MongoDB URI
+      GROQ_API_KEY=your_groq_api_key                     # Optional, if using GROQ
+      TWILIO_SID=your_twilio_sid
+      TWILIO_AUTH_TOKEN=your_twilio_auth_token
+      TWILIO_PHONE=your_twilio_phone_number
+      SECRET_KEY=your_flask_secret_key                   # A random string for Flask session security
+      SMTP_HOST=smtp.gmail.com                           # Example: Gmail SMTP host
+      SMTP_PORT=587                                      # Example: Gmail SMTP port
+      SMTP_EMAIL=your_email@gmail.com                    # Your SMTP email
+      SMTP_PASSWORD=your_smtp_password                   # Your SMTP password or app-specific password
+6. **Run the Application**
+   ```bash
+      python app.py
+**Machine Learning Models**
+This project uses two machine learning models:
+1. water_cnn_model.h5
+A pre-trained Convolutional Neural Network (CNN) model for detecting water issues in images.
+Capable of categorizing issues such as leakage, scarcity, or others.
+2. water_quality_model.pkl
+A model for predicting water quality based on input data.
+Helps in determining if water is safe for use or requires attention.
+
+**Usage**
+Reporting a Water Issue
+Users can upload an image and provide location data via the web interface.
+The system categorizes the issue as leakage, scarcity, or others.
+Issue Verification
+Pollution reports are marked invalid and require manual user verification.
+Notifications
+Receive SMS updates via Twilio for issue status changes or resolutions.
+Officer Assignment
+Issues are automatically assigned to officers for resolution based on categorization and priority.
+
 
